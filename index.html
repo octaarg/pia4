@@ -1,34 +1,195 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pía cumple 4 años</title>
+
+<style>
+
+body{
+margin:0;
+background:#fef6fb;
+font-family:Arial,sans-serif;
+text-align:center;
+}
+
+img{
+width:100%;
+display:block;
+max-width:700px;
+margin:auto;
+}
+
+.contador{
+background:#ffd6eb;
+padding:40px 10px;
+}
+
+.titulo{
+font-size:40px;
+color:#0d75c9;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.boxes{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.box{
+background:white;
+padding:15px;
+border-radius:20px;
+width:90px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.numero{
+font-size:30px;
+font-weight:bold;
+color:#ff4fa0;
+}
+
+.texto{
+font-size:12px;
+color:#0d75c9;
+}
+
+.botones{
+padding:40px 20px;
+}
+
+.btn{
+display:block;
+max-width:500px;
+margin:15px auto;
+padding:20px;
+border-radius:50px;
+text-decoration:none;
+font-size:22px;
+font-weight:bold;
+color:white;
+}
+
+.mapa{
+background:#ff7cbf;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+footer{
+padding:40px;
+font-size:24px;
+font-weight:bold;
+color:#ff4fa0;
+}
+
+</style>
+
 </head>
 
-<body style="font-family:Arial;text-align:center;background:#ffe8f3;padding:30px;">
+<body>
 
-<h1 style="color:#ff4fa0;">🐷 Pía cumple 4 años 🐷</h1>
+<img src="PORTADA.PNG.png">
 
-<p>Peppa Pig y sus amigos tienen una invitación muy especial...</p>
+<img src="HISTORIA.PNG.png">
 
-<p><strong>Domingo 14 de junio de 2026</strong></p>
+<section class="contador">
 
-<p>17:00 hs a 20:00 hs</p>
+<div class="titulo">
+⏳ Falta muy poquito
+</div>
 
-<br>
+<div class="boxes">
 
-<a href="https://www.google.com/maps/place/GI+Eventos+Infantiles/@-32.1746593,-64.1010147,17z"
-target="_blank">
-📍 Ver ubicación
+<div class="box">
+<div id="dias" class="numero">0</div>
+<div class="texto">DÍAS</div>
+</div>
+
+<div class="box">
+<div id="horas" class="numero">0</div>
+<div class="texto">HORAS</div>
+</div>
+
+<div class="box">
+<div id="minutos" class="numero">0</div>
+<div class="texto">MIN</div>
+</div>
+
+<div class="box">
+<div id="segundos" class="numero">0</div>
+<div class="texto">SEG</div>
+</div>
+
+</div>
+
+</section>
+
+<img src="FECHA.PNG.png">
+
+<section class="botones">
+
+<a class="btn mapa"
+target="_blank"
+href="https://www.google.com/maps/place/GI+Eventos+Infantiles/@-32.1746593,-64.1010147,17z">
+
+📍 VER UBICACIÓN
+
 </a>
 
-<br><br>
+<a class="btn whatsapp"
+target="_blank"
+href="https://wa.me/5493571621473?text=Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20de%20Pía">
 
-<a href="https://wa.me/5493571621473?text=Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20de%20Pía"
-target="_blank">
-📱 Confirmar asistencia
+📱 CONFIRMAR ASISTENCIA
+
 </a>
+
+</section>
+
+<img src="CIERRE.PNG.png">
+
+<footer>
+
+💖 ¡Te esperamos! 💖
+
+</footer>
+
+<script>
+
+const fecha =
+new Date("June 14, 2026 17:00:00").getTime();
+
+setInterval(() => {
+
+const ahora = new Date().getTime();
+
+const distancia = fecha - ahora;
+
+document.getElementById("dias").innerHTML =
+Math.floor(distancia/(1000*60*60*24));
+
+document.getElementById("horas").innerHTML =
+Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutos").innerHTML =
+Math.floor((distancia%(1000*60*60))/(1000*60));
+
+document.getElementById("segundos").innerHTML =
+Math.floor((distancia%(1000*60))/1000);
+
+},1000);
+
+</script>
 
 </body>
 </html>
